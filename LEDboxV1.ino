@@ -88,288 +88,336 @@ void loop() {
 boolean a1 , a2 , a3 , a4 , a5, b1 , b2 , b3 , b4 , b5 , c1 , c2 , c3 , c4 , c5;
 
 void drawLetter(int letter , int inputR , int inputG , int inputB) {
-  a1 = false;
-  a2 = false;
-  a3 = false;
-  a4 = false;
-  a5 = false;
-  b1 = false;
-  b2 = false;
-  b3 = false;
-  b4 = false;
-  b5 = false;
-  c1 = false;
-  c2 = false;
-  c3 = false;
-  c4 = false;
-  c5 = false;
+  //! The letters are drawn on 3x5 groups of pixels, if you will.
+  //! They look something like this. (Letters are columns, numbers are rows)
+  // [  00  ]
+  // [00  00]
+  // [000000]
+  // [00  00]
+  // [00  00]
+
+  //! Initially set all to false
+  a1 = false;  b1 = false;  c1 = false;
+  a2 = false;  b2 = false;  c2 = false;
+  a3 = false;  b3 = false;  c3 = false;
+  a4 = false;  b4 = false;  c4 = false;
+  a5 = false;  b5 = false;  c5 = false;
+
+  //! TODO: QUESTION: Maybe use case/switch instead of if, elif?
   if (letter == 'A') {
-    b1 = true;
-    a2 = true;
-    c2 = true;
-    a3 = true;
-    c3 = true;
-    a4 = true;
-    c4 = true;
-    a5 = true;
-    c5 = true;
-    b3 = true;
+    // [  00  ]
+    // [00  00]
+    // [000000]
+    // [00  00]
+    // [00  00]
+                b1 = true;
+    a2 = true;             c2 = true;
+    a3 = true;  b3 = true; c3 = true;
+    a4 = true;             c4 = true;
+    a5 = true;             c5 = true;
+
   } else if (letter == 'B') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    b1 = true;
-    b3 = true;
-    b5 = true;
-    c2 = true;
-    c4 = true;
+    // [0000  ]
+    // [00  00]
+    // [0000  ]
+    // [00  00]
+    // [0000  ]
+    
+    a1 = true; b1 = true;
+    a2 = true;            c2 = true;
+    a3 = true; b3 = true;
+    a4 = true;            c4 = true;
+    a5 = true; b5 = true;
   } else if (letter == 'C') {
-    b1 = true;
-    c1 = true;
+    // [  0000]
+    // [00    ]
+    // [00    ]
+    // [00    ]
+    // [  0000]
+
+               b1 = true; c1 = true;
     a2 = true;
     a3 = true;
     a4 = true;
-    b5 = true;
-    c5 = true;
+               b5 = true; c5 = true;
   } else if (letter == 'D') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    b1 = true;
-    b5 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
+    // [0000  ]
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [0000  ]
+    
+    a1 = true; b1 = true;
+    a2 = true;            c2 = true;
+    a3 = true;            c3 = true;
+    a4 = true;            c4 = true;
+    a5 = true; b5 = true;
   } else if (letter == 'E') {
-    a1 = true;
+    // [000000]
+    // [00    ]
+    // [000000]
+    // [00    ]
+    // [000000]
+    
+    a1 = true; b1 = true; c1 = true;
     a2 = true;
-    a3 = true;
+    a3 = true; b3 = true; c3 = true;
     a4 = true;
-    a5 = true;
-    b1 = true;
-    c1 = true;
-    b3 = true;
-    c3 = true;
-    b5 = true;
-    c5 = true;
+    a5 = true; b5 = true; c5 = true;
+    
   } else if (letter == 'F') {
-    a1 = true;
+    // [000000]
+    // [00    ]
+    // [0000  ]
+    // [00    ]
+    // [00    ]
+
+    a1 = true; b1 = true; c1 = true;
     a2 = true;
-    a3 = true;
+    a3 = true; b3 = true;
     a4 = true;
     a5 = true;
-    b1 = true;
-    c1 = true;
-    b3 = true;
   } else if (letter == 'G') {
-    a1 = true;
+    // [000000]
+    // [00    ]
+    // [00    ]
+    // [00  00]
+    // [000000]
+
+    a1 = true; b1 = true; c1 = true;
     a2 = true;
     a3 = true;
-    a4 = true;
-    a5 = true;
-    b1 = true;
-    c1 = true;
-    b5 = true;
-    c5 = true;
-    c4 = true;
+    a4 = true;            c4 = true;
+    a5 = true; b5 = true; c5 = true;
   } else if (letter == 'H') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    c1 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
-    c5 = true;
-    b3 = true;
+    // [00  00]
+    // [00  00]
+    // [000000]
+    // [00  00]
+    // [00  00]
+    
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+    a3 = true; b3 = true; c3 = true;
+    a4 = true;            c4 = true;
+    a5 = true;            c5 = true;
   } else if (letter == 'I') {
-    a1 = true;
-    a5 = true;
-    b1 = true;
-    b2 = true;
-    b3 = true;
-    b4 = true;
-    b5 = true;
-    c1 = true;
-    c5 = true;
+    // [000000]
+    // [  00  ]
+    // [  00  ]
+    // [  00  ]
+    // [000000]
+
+    a1 = true; b1 = true; c1 = true;
+               b2 = true;
+               b3 = true;
+               b4 = true;
+    a5 = true; b5 = true; c5 = true;
   } else if (letter == 'J') {
-    a1 = true;
-    b1 = true;
-    c1 = true;
-    b2 = true;
-    b3 = true;
-    b4 = true;
+    // [000000]
+    // [  00  ]
+    // [  00  ]
+    // [  00  ]
+    // [00    ]
+
+    a1 = true; b1 = true; c1 = true;
+               b2 = true;
+               b3 = true;
+               b4 = true;
     a5 = true;
   } else if (letter == 'K') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    b3 = true;
-    c1 = true;
-    c2 = true;
-    c4 = true;
-    c5 = true;
+    // [00  00]
+    // [00  00]
+    // [0000  ]
+    // [00  00]
+    // [00  00]
+    
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+    a3 = true; b3 = true;
+    a4 = true;            c4 = true;
+    a5 = true;            c5 = true;
   } else if (letter == 'L') {
+    // [00    ]
+    // [00    ]
+    // [00    ]
+    // [00    ]
+    // [000000]
+    
     a1 = true;
     a2 = true;
     a3 = true;
     a4 = true;
-    a5 = true;
-    b5 = true;
-    c5 = true;
+    a5 = true; b5 = true; c5 = true;
   } else if (letter == 'M') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    c1 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
-    c5 = true;
-    b2 = true;
-    b3 = true;
+    // [00  00]
+    // [000000]
+    // [000000]
+    // [00  00]
+    // [00  00]
+    a1 = true;            c1 = true;
+    a2 = true; b2 = true; c2 = true;
+    a3 = true; b3 = true; c3 = true;
+    a4 = true;            c4 = true;
+    a5 = true;            c5 = true;
+    
   } else if (letter == 'N') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    c1 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
-    c5 = true;
-    b2 = true;
-    b3 = true;
-    b4 = true;
+    // [00  00]
+    // [000000]
+    // [000000]
+    // [000000]
+    // [00  00]
+
+    a1 = true;            c1 = true;
+    a2 = true; b2 = true; c2 = true;
+    a3 = true; b3 = true; c3 = true;
+    a4 = true; b4 = true; c4 = true;
+    a5 = true;            c5 = true;
   } else if (letter == 'O') {
-    b1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    b5 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
+    // [  00  ]
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [  00  ]
+    
+               b1 = true; 
+    a2 = true;            c2 = true;
+    a3 = true;            c3 = true;
+    a4 = true;            c4 = true;
+               b5 = true;
   } else if (letter == 'P') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
+    // [0000  ]
+    // [00  00]
+    // [0000  ]
+    // [00    ]
+    // [00    ]
+
+    a1 = true; b1 = true;
+    a2 = true;            c2 = true;
+    a3 = true; b3 = true;
     a4 = true;
     a5 = true;
-    b1 = true;
-    b3 = true;
-    c2 = true;
   } else if (letter == 'Q') {
-    b1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
-    b5 = true;
-    c5 = true;
+    // [  00  ]
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [  0000]
+
+               b1 = true;
+    a2 = true;            c2 = true;
+    a3 = true;            c3 = true;
+    a4 = true;            c4 = true;
+               b5 = true; c5 = true;
   } else if (letter == 'R') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    b1 = true;
-    b3 = true;
-    c2 = true;
-    c4 = true;
-    c5 = true;
+    // [0000  ]
+    // [00  00]
+    // [0000  ]
+    // [00  00]
+    // [00  00]
+
+    a1 = true; b1 = true;
+    a2 = true;            c2 = true;
+    a3 = true; b3 = true;
+    a4 = true;            c4 = true;
+    a5 = true;            c5 = true;
   } else if (letter == 'S') {
-    b1 = true;
-    c1 = true;
+    // [  0000]
+    // [00    ]
+    // [  00  ]
+    // [    00]
+    // [0000  ]
+
+               b1 = true; c1 = true;
     a2 = true;
-    b3 = true;
-    c4 = true;
-    a5 = true;
-    b5 = true;
+               b3 = true;
+                          c4 = true;
+    a5 = true; b5 = true;
   } else if (letter == 'T') {
-    a1 = true;
-    b1 = true;
-    c1 = true;
-    b2 = true;
-    b3 = true;
-    b4 = true;
-    b5 = true;
+    // [000000]
+    // [  00  ]
+    // [  00  ]
+    // [  00  ]
+    // [  00  ]
+
+    a1 = true; b1 = true; c1 = true;
+               b2 = true;
+               b3 = true;
+               b4 = true;
+               b5 = true;
   } else if (letter == 'U') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    c1 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
-    b5 = true;
-    a5 = true;
-    c5 = true;
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [000000]
+
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+    a3 = true;            c3 = true;
+    a4 = true;            c4 = true;
+    a5 = true; b5 = true; c5 = true;
   } else if (letter == 'V') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    c1 = true;
-    c2 = true;
-    c3 = true;
-    b5 = true;
-    a4 = true;
-    c4 = true;
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [00  00]
+    // [  00  ]
+
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+    a3 = true;            c3 = true;
+    a4 = true;            c4 = true;
+               b5 = true;
   } else if (letter == 'W') {
-    a1 = true;
-    a2 = true;
-    a3 = true;
-    a4 = true;
-    a5 = true;
-    b4 = true;
-    c1 = true;
-    c2 = true;
-    c3 = true;
-    c4 = true;
-    c5 = true;
-    b3 = true;
+    // [00  00]
+    // [00  00]
+    // [000000]
+    // [000000]
+    // [00  00]
+    
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+    a3 = true; b3 = true; c3 = true;
+    a4 = true; b4 = true; c4 = true;
+    a5 = true;            c5 = true;
+
   } else if (letter == 'X') {
-    a1 = true;
-    a2 = true;
-    a4 = true;
-    a5 = true;
-    c1 = true;
-    c2 = true;
-    c4 = true;
-    c5 = true;
-    b3 = true;
+    // [00  00]
+    // [00  00]
+    // [  00  ]
+    // [00  00]
+    // [00  00]
+
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+               b3 = true;
+    a4 = true;            c4 = true;
+    a5 = true;            c5 = true;
   } else if (letter == 'Y') {
-    a1 = true;
-    a2 = true;
-    c1 = true;
-    c2 = true;
-    b3 = true;
-    b4 = true;
-    b5 = true;
+    // [00  00]
+    // [00  00]
+    // [  00  ]
+    // [  00  ]
+    // [  00  ]
+
+    a1 = true;            c1 = true;
+    a2 = true;            c2 = true;
+               b3 = true;
+               b4 = true;
+               b5 = true;
   } else if (letter == 'Z') {
-    a1 = true;
-    b1 = true;
-    c1 = true;
-    c2 = true;
-    b3 = true;
+    // [000000]
+    // [    00]
+    // [  00  ]
+    // [00    ]
+    // [000000]
+
+    a1 = true; b1 = true; c1 = true;
+                          c2 = true;
+               b3 = true;
     a4 = true;
-    a5 = true;
-    b5 = true;
-    c5 = true;
+    a5 = true; b5 = true; c5 = true;
   }
   if (a1) {
     outputR[18] = inputR;
